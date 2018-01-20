@@ -7,7 +7,7 @@ def index(request):
     #NOTE: the key bold message is the same as {{ boldmessage }} in the template!
     context_dict = {'boldmessage': "Crunchy, creamy, cookie, candy, cupcake!"}
     
-    return render(request, 'index.html', context=context_dict)
+    return render(request, 'rango/index.html', context=context_dict)
 
 def about(request):
     return HttpResponse("Rango says you are in the about page")
