@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from rango.models import Cateory
+from rango.models import Category
 
 def index(request):
     # Query the database for a list of ALL categories currently stored.
