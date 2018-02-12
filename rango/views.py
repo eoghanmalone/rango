@@ -187,8 +187,8 @@ def user_login(request):
 # page 122        
 @login_required
 def restricted(request):
-    return HttpResponse("Since you're logged in, you can see this text!")
-    #return render(request, 'rango/restricted.html', {})
+    #return HttpResponse("Since you're logged in, you can see this text!")
+    return render(request, 'rango/restricted.html', {})
 
 # page 124
 @login_required
