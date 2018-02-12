@@ -1,5 +1,7 @@
 from django import forms
-from rango.models import Page, Category
+# see page 112 of chapter 9
+from django.contrib.auth.models import User
+from rango.models import Category, Page, UserProfile
 
 class CategoryForm(forms.ModelForm):
     
@@ -32,3 +34,19 @@ class PageForm(forms.ModelForm):
         exclude = ('category',)
         # or specify the fields to include (i.e. not include the category field)
         #fields = ('title', 'url', 'views')
+
+class UserForm(forms.ModelForm):
+    
+    password = forms.CharField(widget=forms.PasswordInput())
+
+    #see page 111 of book for an explanation
+    class Meta:
+        model = User
+        fields = ('username', 'email', 'password')
+
+class UserProfileForm(forms.ModelForm):
+
+    #see page 111 of book for an explanation
+    class Meta:
+        model = UserProfile
+        fields = ('website', 'picture')
